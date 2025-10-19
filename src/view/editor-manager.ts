@@ -1,12 +1,11 @@
 import type { Editor } from '@milkdown/kit/core';
-import { editorViewCtx, editorViewOptionsCtx, parserCtx } from '@milkdown/kit/core';
+import { editorView, editorViewCtx, parserCtx } from '@milkdown/kit/core';
 import { Slice } from '@milkdown/kit/prose/model';
 import { Crepe } from '@milkdown/crepe';
 import { ClientMessage } from './utils/client-message';
 import { vscode } from './utils/api';
 import { useUploader } from './editor-config/uploader';
 import { useListener } from './editor-config/listener';
-import { vscodeDark, vscodeLight } from '@uiw/codemirror-theme-vscode';
 import { ResourceManager } from './utils/resource-manager';
 
 export class EditorManager {
@@ -19,9 +18,7 @@ export class EditorManager {
             root: '#app',
             defaultValue: state?.text || '',
             featureConfigs: {
-                [Crepe.Feature.CodeMirror]: {
-                    theme: document.body.classList.contains('vscode-dark') ? vscodeDark : vscodeLight,
-                },
+                
                 [Crepe.Feature.ImageBlock]: {
                     proxyDomURL: (originalUrl) => {
                         if (originalUrl.length === 0) {

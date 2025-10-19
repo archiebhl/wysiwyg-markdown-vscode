@@ -1,20 +1,21 @@
 {
-    "name": "milkdown",
+    "name": "wysiwyg-markdown-editor",
+    "displayName": "WYSIWYG Markdown Editor",
+    "description": "A WYSIWYG markdown editor for VSCode, based on the Milkdown project.",
+    "version": "0.1.0",
+    "publisher": "archiebhl",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/archiebhl/vscode.git"
+    },
     "private": true,
     "icon": "logo.png",
-    "displayName": "Milkdown",
-    "description": "Edit markdown in a WYSIWYG way, powered by milkdown.",
-    "version": "0.0.20",
     "engines": {
         "vscode": "^1.74.0"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Saul-Mirone/milkdown-vscode.git"
-    },
     "categories": [
         "Visualization",
-        "Programming Languages"
+        "Other"
     ],
     "activationEvents": [
         "onLanguage:markdown"
@@ -22,15 +23,16 @@
     "keywords": [
         "markdown",
         "milkdown",
-        "wysiwyg"
+        "wysiwyg",
+        "editor",
+        "obsidian"
     ],
     "main": "./dist/extension.js",
-    "publisher": "mirone",
     "contributes": {
         "customEditors": [
             {
                 "viewType": "milkdown.editor",
-                "displayName": "Milkdown Editor",
+                "displayName": "WYSIWYG Markdown Editor",
                 "selector": [
                     {
                         "filenamePattern": "*.md"
@@ -58,8 +60,8 @@
         "commands": [
             {
                 "command": "milkdown.open",
-                "title": "Open with Milkdown",
-                "category": "Milkdown"
+                "title": "Open with WYSIWYG Editor",
+                "category": "WYSIWYG Editor"
             }
         ],
         "keybindings": [
@@ -213,6 +215,7 @@
         "@babel/runtime": "^7.26.7",
         "@milkdown/crepe": "^7.6.2",
         "@milkdown/kit": "^7.6.2",
+        "@types/highlight.js": "^10.1.0",
         "@types/lodash.throttle": "^4.1.9",
         "@types/node": "~22.18.0",
         "@types/vscode": "^1.59.0",
@@ -229,5 +232,20 @@
         "tsup": "^8.3.6",
         "typescript": "^5.6.2"
     },
-    "packageManager": "pnpm@10.18.3"
+    "packageManager": "pnpm@10.18.3",
+    "dependencies": {
+        "@codemirror/language": "^6.11.3",
+        "@codemirror/state": "^6.5.2",
+        "@codemirror/view": "latest",
+        "@milkdown/preset-gfm": "^7.17.1",
+        "@uiw/codemirror-theme-github": "latest",
+        "highlight.js": "^11.11.1"
+    },
+    "pnpm": {
+        "overrides": {
+            "@codemirror/view": "latest",
+            "@codemirror/state": "latest",
+            "@codemirror/language": "latest"
+        }
+    }
 }

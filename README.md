@@ -1,3 +1,15 @@
+# Fork Information
+
+Features:
+- Fixed issues brought abuot by using Crepe for fenced code, such as buggy typing and erratic caret movements.
+
+For devs: 
+1. Install dependencies with `pnpm install`.
+2. Package with `pnpm run package`.
+3. Run the code. 
+
+The original readme is below:
+
 # Milkdown 💖 VSCode
 
 Edit markdown in a WYSIWYG way, powered by [milkdown](https://saul-mirone.github.io/milkdown/#/).
