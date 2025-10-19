@@ -234,12 +234,12 @@
     },
     "packageManager": "pnpm@10.18.3",
     "dependencies": {
-        "@codemirror/language": "^6.11.3",
-        "@codemirror/state": "^6.5.2",
+        "@codemirror/language": "latest",
+        "@codemirror/state": "latest",
         "@codemirror/view": "latest",
-        "@milkdown/preset-gfm": "^7.17.1",
+        "@milkdown/preset-gfm": "latest",
         "@uiw/codemirror-theme-github": "latest",
-        "highlight.js": "^11.11.1"
+        "highlight.js": "latest"
     },
     "pnpm": {
         "overrides": {

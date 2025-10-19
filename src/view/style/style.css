@@ -7,3 +7,28 @@
 
 @import './token.css';
 
+/* --- Root container with minimal padding --- */
+.milkdown {
+    padding: 2rem 16px;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+/* --- Editor surface with a wider column --- */
+.ProseMirror {
+    /* Font size and line height are good */
+    font-size: 18px;
+    line-height: 1.7;
+
+    /* THIS IS THE FIX: Increased the max-width for a wider content area */
+    max-width: 1000px; /* Increased from 800px. Adjust if you want it even wider. */
+
+    /* This keeps the wider column centered */
+    margin: 0 auto;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+    line-height: 1.3;
+}

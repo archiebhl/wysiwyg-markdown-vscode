@@ -7,6 +7,7 @@ import { vscode } from './utils/api';
 import { useUploader } from './editor-config/uploader';
 import { useListener } from './editor-config/listener';
 import { ResourceManager } from './utils/resource-manager';
+import { EditorView } from '@codemirror/view';
 
 export class EditorManager {
     private editor: Editor | null = null;
@@ -18,7 +19,9 @@ export class EditorManager {
             root: '#app',
             defaultValue: state?.text || '',
             featureConfigs: {
-                
+                [Crepe.Feature.CodeMirror]: {
+                    extensions: [EditorView.lineWrapping],
+                },
                 [Crepe.Feature.ImageBlock]: {
                     proxyDomURL: (originalUrl) => {
                         if (originalUrl.length === 0) {

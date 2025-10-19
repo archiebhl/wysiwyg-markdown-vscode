@@ -1,13 +1,17 @@
 # Fork Information
 
 Features:
+Generally, this fork aims to improve readability and fix some bugs related to code blocks.
 - Fixed issues brought about by using Crepe for fenced code, such as buggy typing and erratic caret movements.
-- The plugin now acts as the default markdown editor. 
+- Line wrapping for code blocks. This is not a toggle at the moment.
+- The plugin now acts as the default markdown editor. Optionally, you can open it through the Command Palette. 
+- Added margins to the UI that mimics Obsidian.md's "Readable Line Lengths" view. No toggle at the moment. 
 
 For devs: 
 1. Install dependencies with `pnpm install`.
 2. Package with `pnpm run package`.
-3. Run the code. 
+3. Run the code with `F5` to test in the Extension Dev Environment. 
+4. To get the VSIX and use the plugin, run `pnpm vscode-package`.
 
 The original readme is below:
 
