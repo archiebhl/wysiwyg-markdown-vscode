@@ -14,22 +14,22 @@ importers:
   .:
     dependencies:
       '@codemirror/language':
-        specifier: ^6.11.3
+        specifier: latest
         version: 6.11.3
       '@codemirror/state':
-        specifier: ^6.5.2
+        specifier: latest
         version: 6.5.2
       '@codemirror/view':
         specifier: latest
         version: 6.38.6
       '@milkdown/preset-gfm':
-        specifier: ^7.17.1
+        specifier: latest
         version: 7.17.1
       '@uiw/codemirror-theme-github':
         specifier: latest
         version: 4.25.2(@codemirror/language@6.11.3)(@codemirror/state@6.5.2)(@codemirror/view@6.38.6)
       highlight.js:
-        specifier: ^11.11.1
+        specifier: latest
         version: 11.11.1
     devDependencies:
       '@babel/runtime':
@@ -3616,12 +3616,12 @@ snapshots:
       prosemirror-history: 1.4.1
       prosemirror-inputrules: 1.4.0
       prosemirror-keymap: 1.2.2
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.25.3
       prosemirror-schema-list: 1.5.0
       prosemirror-state: 1.4.3
       prosemirror-tables: 1.8.1
-      prosemirror-transform: 1.10.2
-      prosemirror-view: 1.37.2
+      prosemirror-transform: 1.10.4
+      prosemirror-view: 1.41.3
 
   '@milkdown/prose@7.6.2':
     dependencies:

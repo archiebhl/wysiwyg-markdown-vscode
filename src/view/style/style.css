@@ -7,21 +7,4 @@
 
 @import './token.css';
 
-.milkdown {
-    padding: 2rem 16px;
-    box-sizing: border-box;
-    height: 100vh;
-}
-
-.ProseMirror {
-    font-size: 18px;
-    line-height: 1.7;
-    max-width: 1000px; 
-    margin: 0 auto;
-}
-
-.ProseMirror h1,
-.ProseMirror h2,
-.ProseMirror h3 {
-    line-height: 1.3;
-}
+@import './layout.css';

@@ -1,0 +1,12 @@
+.milkdown {
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.ProseMirror {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
