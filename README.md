@@ -1,7 +1,8 @@
 # Fork Information
 
 Features:
-- Fixed issues brought abuot by using Crepe for fenced code, such as buggy typing and erratic caret movements.
+- Fixed issues brought about by using Crepe for fenced code, such as buggy typing and erratic caret movements.
+- The plugin now acts as the default markdown editor. 
 
 For devs: 
 1. Install dependencies with `pnpm install`.
@@ -41,7 +42,7 @@ Edit markdown in a WYSIWYG way, powered by [milkdown](https://saul-mirone.github
 -   Math support
 
 ### Set as Default
-
+(No longer relevant in the fork)
 If you want to use milkdown as your default markdown, you can add this config into your settings:
 
 ```json
