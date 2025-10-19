@@ -73,7 +73,7 @@ export class EditorManager {
                         findChildren((node) => node.isTextblock)(doc).forEach(({ node, pos }) => {
                             let match;
                             while ((match = regex.exec(node.textContent))) {
-                                const from = pos + 1 + match.index; // <-- THE FIX IS HERE (+ 1)
+                                const from = pos + 1 + match.index; 
                                 const to = from + match[0].length;
                                 decorations.push(Decoration.inline(from, to, { class: 'quoted-text' }));
                             }
