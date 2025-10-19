@@ -10,3 +10,7 @@
     max-width: 1000px; 
     margin: 0 auto;
 }
+
+.quoted-text {
+  color: #c792ea;
+}

@@ -1,6 +1,9 @@
+import { editorViewCtx, parserCtx, prosePluginsCtx } from '@milkdown/kit/core';
 import type { Editor } from '@milkdown/kit/core';
-import { editorView, editorViewCtx, parserCtx } from '@milkdown/kit/core';
 import { Slice } from '@milkdown/kit/prose/model';
+import { Plugin, PluginKey } from '@milkdown/kit/prose/state';
+import { Decoration, DecorationSet } from '@milkdown/kit/prose/view';
+import { findChildren } from '@milkdown/kit/prose';
 import { Crepe } from '@milkdown/crepe';
 import { ClientMessage } from './utils/client-message';
 import { vscode } from './utils/api';
@@ -59,6 +62,49 @@ export class EditorManager {
         useListener(crepe, this.message);
         const { editor } = crepe;
         useUploader(editor, this.message);
+
+        editor.config((ctx) => {
+            const quoteHighlightPlugin = new Plugin({
+                key: new PluginKey('quote-highlight'),
+                state: {
+                    init: (_, { doc }) => {
+                        const decorations: Decoration[] = [];
+                        const regex = /"[^"]*"/g;
+                        findChildren((node) => node.isTextblock)(doc).forEach(({ node, pos }) => {
+                            let match;
+                            while ((match = regex.exec(node.textContent))) {
+                                const from = pos + 1 + match.index; // <-- THE FIX IS HERE (+ 1)
+                                const to = from + match[0].length;
+                                decorations.push(Decoration.inline(from, to, { class: 'quoted-text' }));
+                            }
+                        });
+                        return DecorationSet.create(doc, decorations);
+                    },
+                    apply: (tr, old) => {
+                        if (!tr.docChanged) return old;
+                        const decorations: Decoration[] = [];
+                        const regex = /"[^"]*"/g;
+                        findChildren((node) => node.isTextblock)(tr.doc).forEach(({ node, pos }) => {
+                            let match;
+                            while ((match = regex.exec(node.textContent))) {
+                                const from = pos + 1 + match.index; // <-- AND HERE (+ 1)
+                                const to = from + match[0].length;
+                                decorations.push(Decoration.inline(from, to, { class: 'quoted-text' }));
+                            }
+                        });
+                        return DecorationSet.create(tr.doc, decorations);
+                    },
+                },
+                props: {
+                    decorations(state) {
+                        return this.getState(state);
+                    },
+                },
+            });
+
+            const plugins = ctx.get(prosePluginsCtx);
+            ctx.set(prosePluginsCtx, [...plugins, quoteHighlightPlugin]);
+        });
 
         await crepe.create();
 

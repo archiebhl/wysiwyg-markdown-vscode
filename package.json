@@ -237,7 +237,9 @@
         "@codemirror/language": "latest",
         "@codemirror/state": "latest",
         "@codemirror/view": "latest",
+        "@milkdown/ctx": "^7.17.1",
         "@milkdown/preset-gfm": "latest",
+        "@milkdown/utils": "^7.17.1",
         "@uiw/codemirror-theme-github": "latest",
         "highlight.js": "latest"
     },
@@ -245,7 +247,8 @@
         "overrides": {
             "@codemirror/view": "latest",
             "@codemirror/state": "latest",
-            "@codemirror/language": "latest"
+            "@codemirror/language": "latest",
+            "@milkdown/ctx": "latest"
         }
     }
 }
