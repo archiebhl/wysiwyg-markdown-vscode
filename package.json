@@ -6,7 +6,7 @@
     "publisher": "archiebhl",
     "repository": {
         "type": "git",
-        "url": "https://github.com/archiebhl/vscode.git"
+        "url": "https://github.com/archiebhl/wysiwyg-markdown-vscode.git"
     },
     "private": true,
     "icon": "logo.png",
